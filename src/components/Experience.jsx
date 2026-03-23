@@ -52,7 +52,10 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div key={index} className="relative pl-8 border-l-2 border-slate-800 hover:border-cyan-400 transition-colors group">
               <div className="absolute w-4 h-4 bg-slate-900 border-2 border-slate-700 group-hover:border-cyan-400 rounded-full -left-2.25 top-1 transition-colors"></div>
-              <span className="text-sm font-bold text-cyan-400 uppercase tracking-widest">{exp.year}</span>
+              <div className="flex justify-between">
+                <span className="text-sm font-bold text-cyan-400 uppercase tracking-widest">{exp.year}</span>
+                <span className="text-sm font-bold text-cyan-700 ">{exp.category}</span>
+              </div>
               <h3 className="text-xl font-bold text-white mt-1">{exp.title}</h3>
               <p className="text-slate-300 font-medium">{exp.company}</p>
               <p className="text-slate-400 text-sm mt-2 leading-relaxed">{exp.desc}</p>

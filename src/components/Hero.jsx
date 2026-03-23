@@ -15,7 +15,7 @@ const Hero = () => {
           <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-slate-700 shadow-xl shadow-slate-950/50">
             <img 
               src={fotoProfil} 
-              alt="Kurnia Rahman Profil" 
+              alt="Arif Kurnia Profil" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>

@@ -1,22 +1,49 @@
 const Projects = () => {
   const projects = [
     {
+      title: "CineExplora",
+      desc: "Web yang terhubung dengan API Film",
+      type: "Code",
+      tech: ["Html/Css", "Javascript", "API"],
+      image: "/assets/projects/web-3.png",
+      link: "https://uas-pem-web-eight.vercel.app"
+    },
+    {
+      title: "To-Do-List",
+      desc: "Aplikasi To-Do-List dengan React terintegrasi LocalStorage",
+      type: "Code",
+      tech: ["React", "State Management", "Tailwind"],
+      image: "/assets/projects/web-1.png",
+      link: "/project/todo"
+    },
+    {
+      title: "Personal Finance Tracker",
+      desc: "Aplikasi Pencatat Pemasukan/Pengeluaran terintegrasi LocalStorage",
+      type: "Code",
+      tech: ["React","State Management", "Tailwind"],
+      image: "/assets/projects/web-2.png",
+      link: "/project/pft"
+    },
+    {
       title: "Manusia dan AI",
       desc: "Poster kesadaran akan teknologi AI",
       type: "Design",
-      link: "/assets/projects/poster-1.jpg"
+      tech: ["CorelDraw"],
+      image: "/assets/projects/poster-1.jpg"
     },
     {
       title: "Raih Prestasi Tanpa Narkoba",
       desc: "Poster tentang ",
       type: "Design",
-      link: "/assets/projects/poster-2.png"
+      tech: ["CorelDraw"],
+      image: "/assets/projects/poster-2.png"
     },
     {
       title: "Tolak Narkoba",
       desc: "Poster Tolak Narkoba dengan data kasus dan kerugian ekonomi di tahun 2024 ",
       type: "Design",
-      link: "/assets/projects/poster-3.jpg"
+      tech: ["CorelDraw"],
+      image: "/assets/projects/poster-3.jpg"
     }
   ];
 
@@ -29,13 +56,18 @@ const Projects = () => {
             <div key={index} className="group relative rounded-xl overflow-hidden bg-slate-800 border border-slate-700 hover:scale-[1.02] transition-transform">
               <div className="h-64 bg-slate-700 flex items-center justify-center text-slate-500 font-mono">
                 {/* Ganti dengan <img src={...} /> jika sudah ada gambarnya */}
-                <img src={proj.link} alt="Poster Design" className="w-full h-full object-cover" />
+                <img src={proj.image} alt="Poster Design" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <span className="text-[10px] uppercase tracking-widest text-cyan-400 font-bold">{proj.type}</span>
                 <h3 className="text-xl font-bold text-white mt-2">{proj.title}</h3>
+                <div>
+                  {proj.tech.map((t, i) => (
+                    <span className="text-[9pt] pr-2 text-blue-400 " key={i}>{t}</span>
+                  ))}
+                </div>
                 <p className="text-slate-400 text-sm mt-2">{proj.desc}</p>
-                <a href={proj.link} className="inline-block mt-4 text-sm text-cyan-400 hover:underline">View Project →</a>
+                <a href={proj.link || proj.image} className="inline-block mt-4 text-sm text-cyan-400 hover:underline">View Project →</a>
               </div>
             </div>
           ))}
