@@ -1,9 +1,13 @@
-// 1. Import foto kamu di bagian atas file
-// Pastikan path dan nama filenya sesuai dengan yang kamu simpan!
 import fotoProfil from '/assets/profil/Profil.jpg'
 const Hero = () => {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
-    <section id="hero" className="pt-36 pb-20 px-10 text-center">
+    <section id="hero" className="pt-36 pb-20 px-10 flex">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 text-center md:text-left">
         
         {/* === BAGIAN FOTO PROFIL === */}
@@ -33,9 +37,9 @@ const Hero = () => {
             Technical Informatics student with strong skills in Web Development (React/NodeJS), IT Operations (Dapodik/ANBK), and Graphic Design. Let's build something efficient together.
           </p>
           <div className="mt-12 flex gap-4">
-            <a href="#projects" className="bg-cyan-500 hover:bg-cyan-600 text-slate-900 px-8 py-3 rounded-full font-bold transition-all shadow-lg shadow-cyan-500/20 text-sm">
+            <button onClick={() => scrollToSection('projects')} className="bg-cyan-500 hover:bg-cyan-600 text-slate-900 px-8 py-3 rounded-full font-bold transition-all shadow-lg shadow-cyan-500/20 text-sm cursor-pointer">
               View My Work
-            </a>
+            </button>
             {/* Pastikan kamu punya file CV-mu di folder public/ dengan nama cv-kurnia.pdf */}
             <a href="/CV - Moh Arif Kurnia Rahman.pdf" target="_blank" className="border border-slate-700 hover:border-cyan-400 hover:text-cyan-400 text-slate-300 px-8 py-3 rounded-full font-bold transition-all text-sm">
               Download CV

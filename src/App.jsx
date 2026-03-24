@@ -45,6 +45,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/project" element={<Projects/>}/>
             <Route path="/project/todo" element={<ToDoPage />} />
             <Route path="/project/pft" element={<PftPage />} />
           </Routes>
